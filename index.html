@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </head>
+    <body>
+
+        <h1>ARボタンを非表示設定</h1>
+        <a>PCのブラウザでは確認できません。iosでのみ動作させるチャレンジ中。</a>
+        <a>iphoneで確認するために、githubのリポジトリに登録中です。</a>
+
+        <style>
+            model-viewer {
+              width: 800px;
+              height: 400px;
+              background-color: #444444;
+            }
+            model-viewer#reveal {
+                --poster-color: transparent;
+            }
+
+            /* 下記ではボタンが消えない */
+            model-viewer [slot="ar-button"] {
+                display: none;
+            }
+
+        </style>
+
+        <model-viewer
+
+            ar
+            ar-modes="scene-viewer webxr quick-look"
+            src="./test_FBX_blender_01.glb"
+
+            ios-src="./test_FBX_blender_01.usdz"
+            alt="椅子"
+            auto-rotate
+            camera-controls
+
+            <!--  下記で何かが変化するか？ -->
+            <button id="custom-ar-button" slot="ar-button"></button>
+
+        ></model-viewer>
+        <br>
+    </body>
+    <footer>
+        <a>最終更新日2023年5月16日11:10</a>
+    </footer>
+</html>
