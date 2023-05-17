@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </head>
+    <body>
+
+        <h1>AR表示時のglb輝度改善</h1>
+
+        <style>
+            model-viewer {
+              width: 800px;
+              height: 400px;
+              background-color: #444444;
+            }
+            model-viewer#reveal {
+                --poster-color: transparent;
+            }
+
+        </style>
+
+        <model-viewer
+
+            ar
+            ar-modes="scene-viewer webxr quick-look"
+            src="./test_FBX_blender_01.glb"
+            ios-src="./test_FBX_blender_01.usdz"
+            alt="椅子"
+            auto-rotate
+            camera-controls
+        >
+
+        </model-viewer>
+        <br>
+    </body>
+    <footer>
+        <a>最終更新日2023年5月16日12:10</a>
+    </footer>
+</html>
